@@ -6,7 +6,11 @@ from django.db import models
 # Create your models here.
 
 class Persona(models.Model):
-    pass
+    nombre_completo =models.CharField(max_length=255)
+    edad=models.IntegerField()
+    email=models.CharField(max_length=255)
+
+
 
 class Posteo(models.Model):
     autor = models.TextField(max_length=100)
