@@ -28,7 +28,7 @@ class BlogDetail(DetailView):
 
 class BlogCreate(LoginRequiredMixin, CreateView):
     model = Posteo
-    uccess_url = reverse_lazy("blogList")
+    uccess_url = reverse_lazy("blog_list")
     fields = ["autor", "titulo", "categoria", "post"]
 
 
