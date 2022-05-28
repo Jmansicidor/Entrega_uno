@@ -3,13 +3,13 @@ from time import time
 from unicodedata import category
 from django.db import models
 
+
 # Create your models here.
 
 class Persona(models.Model):
-    nombre_completo =models.CharField(max_length=255)
-    edad=models.IntegerField()
-    email=models.CharField(max_length=255)
-
+    nombre_completo = models.CharField(max_length=255)
+    edad = models.IntegerField()
+    email = models.CharField(max_length=255)
 
 
 class Posteo(models.Model):
@@ -18,3 +18,6 @@ class Posteo(models.Model):
     categoria = models.TextField(max_length=100)
     post = models.TextField(max_length=1000)
     fecha_posteo = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Posteo {self.id}: {self.titulo} {self.categoria} {self.post} {self.fecha_posteo}'

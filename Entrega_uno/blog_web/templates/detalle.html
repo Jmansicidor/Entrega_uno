@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% extends "inicio.html" %}
+    <title>Detalle</title>
+</head>
+<body>
+{% block title %}
+<h1>Detalle</h1>
+{% end block %}
+
+{% block content %}
+<div class="container">
+    <div> id Usuario: {{posteo.id}}</div>
+    <div> id Usuario: {{posteo.titulo}}</div>
+    <div> id Usuario: {{posteo.categoria}}</div>
+    <div> id Usuario: {{posteo.post}}</div>
+    <div> id Usuario: {{posteo.fecha}}</div>
+    <div> id Usuario: {{posteo.autor}}</div>
+
+
+</div>
+{% end block %}
+
+</body>
+</html>
