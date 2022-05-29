@@ -5,7 +5,6 @@ urlpatterns = [
 
     path("lista", views.Bloglist.as_view(), name="blog_list"),
     path("crear/", views.BlogCreate.as_view(), name="blog_crear"),
-<<<<<<< HEAD
     path("detalle/<pk>/", views.BlogDetail.as_view(), name ="blog_detail"),
     path("editar/<pk>/", views.BlogUpdate.as_view(), name ="blog_update"),
     path("borrar/<pk>/", views.BlogDelete.as_view(), name ="blog_delete"),
@@ -16,10 +15,5 @@ urlpatterns = [
     path("editar-persona/<pk>/", views.PersonaUpdate.as_view(), name ="persona_update"),
     path("borrar-persona/<pk>/", views.PersonaDelete.as_view(), name ="persona_delete"),
     
-=======
-    path("detalle/<pk>/", views.BlogDetail.as_view(), name="blog_detail"),
-    path("editar/<pk>/", views.BlogUpdate.as_view(), name="blog_update"),
-    path("borrar/<pk>/", views.BlogDelete.as_view(), name="blog_delete"),
->>>>>>> 95afddfb1d732488a8abf574874f9b7befdd749d
 
 ]
