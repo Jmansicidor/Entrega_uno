@@ -21,3 +21,9 @@ class Posteo(models.Model):
 
     def __str__(self):
         return f'Posteo {self.id}: {self.titulo} {self.categoria} {self.post} {self.fecha_posteo}'
+
+
+class Usuario(models.Model):
+    pais = models.CharField(max_length=255)
+    domicilio = models.CharField(max_length=255)
+    sexo = models.CharField(max_length=255)
