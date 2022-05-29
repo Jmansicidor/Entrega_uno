@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Este es el Blog</title>
 </head>
 <body>
-<div class=container>
+<div class="container text-center">
     {% block title %}
-    <h1>Blog Web</h1>
+    <h1>EL BLOG DEL CODER</h1>
     {% endblock %}
 </div>
 
 {% block content %}
 <div class="container">
-    <div>  Registros:  {{no_blog}}</div>
+    <div> Registros: {{no_blog}}</div>
 
 
     <div>
@@ -34,19 +37,20 @@
             </tr>
             </thead>
             <tbody>
-            {% for  blog_web in blogweb %}
+            {% for blog_web in blogweb %}
             <tr>
 
                 <td>{{blog_web.titulo}}</td>
                 <td>{{blog_web.categoria}}</td>
                 <td>{{blog_web.post}}</td>
                 <td>{{blog_web.fecha_posteo}}</td>
-                <td><a href="detalle_posteo/{{posteo.id}}">Detalle</a></td>
+                <td><a href="BlogDetail/{{blog_web.id}}">Detalle</a></td>
                 </td>
             </tr>
             {% endfor %}
             </tbody>
-        </>
+        </
+        >
 
     </div>
 </div>
