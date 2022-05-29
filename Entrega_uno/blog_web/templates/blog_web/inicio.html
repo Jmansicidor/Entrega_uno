@@ -1,12 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <meta charset="UTF-8">
     <title>Este es el Blog</title>
 </head>
 <body>
-<h1>Blog Web</h1>
+<div class=container>
+    {% block title %}
+    <h1>Blog Web</h1>
+    {% endblock %}
+</div>
+
+{% block content %}
+<div class="container">
+    <div>  Registros:  {{no_blog}}</div>
 
 
+    <div>
+
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+
+                <th>Titulo</th>
+                <th>Categoria</th>
+                <th>Post</th>
+                <th>Fecha</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for  blog_web in blogweb %}
+            <tr>
+
+                <td>{{blog_web.titulo}}</td>
+                <td>{{blog_web.categoria}}</td>
+                <td>{{blog_web.post}}</td>
+                <td>{{blog_web.fecha_posteo}}</td>
+                <td><a href="detalle_posteo/{{posteo.id}}">Detalle</a></td>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </>
+
+    </div>
+</div>
+{% endblock %}
 </body>
 </html>
