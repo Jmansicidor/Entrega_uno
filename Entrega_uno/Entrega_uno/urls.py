@@ -23,8 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name='index'),
     path('detalle_blog/<int:id>', detalleposteo),
-    path('blog/', include ('blog_web.urls')),
-
-
+    path('blog/', include('blog_web.urls')),
 
 ]
