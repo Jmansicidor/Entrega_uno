@@ -1,0 +1,42 @@
+{% load bootstrap5 %}
+
+
+
+{% if object_list %}
+
+{% for blog in object_list %}
+
+<br>
+    <li>
+        
+
+    {% block content %}
+
+        <a href="{% url 'persona_detail' blog.id %}"><button type="button" class="btn btn-primary">Detalles de: {{blog.nombre_completo}}</button></a>
+       
+        
+
+        {% if user.is_authenticated %}
+         
+          <a href="{% url 'persona_delete' blog.id %}"><button type="button" class="btn btn-primary">Borrar</button></a>
+          
+          <a href="{% url 'persona_update' blog.id %}"><button type="button" class="btn btn-primary">Actualizar</button></a>
+
+          
+        {% endif %}
+
+        {% endblock %}
+
+    </li>
+    {% endfor %}
+
+    <br>
+
+<a href="{% url 'persona_crear'%}"><button type="button" class="btn btn-primary">Agregar</button></a>
+<a href="{% url 'blog_list' %}"><button type="button" class="btn btn-primary">Volver a Lista Blog</button></a>
+
+{% else %}
+  <h1> No hay blogs</h1>
+  
+{% endif %}
+

@@ -30,16 +30,46 @@ class BlogDetail(DetailView):
 
 class BlogCreate(LoginRequiredMixin, CreateView):
     model = Posteo
-    uccess_url = reverse_lazy("blog_list")
+    success_url = reverse_lazy("blog_list")
     fields = ["autor", "titulo", "categoria", "post"]
 
 
 class BlogDelete(LoginRequiredMixin, DeleteView):
     model = Posteo
-    success_url = reverse_lazy("blogList")
+    success_url = reverse_lazy("blog_list")
 
 
 class BlogUpdate(LoginRequiredMixin, UpdateView):
     model = Posteo
-    success_url = reverse_lazy("blogList")
+    success_url = reverse_lazy("blog_list")
     fields = ["autor", "titulo", "categoria", "post"]
+
+
+# agregamos la clase persona
+
+
+class Personalist(ListView):
+    model = Persona
+    template_name = "blog_web/personaList.html"
+
+
+class PersonaDetail(DetailView):
+    model = Persona
+    template_name = "blog_web/personaDetail.html"
+
+
+class PersonaCreate(LoginRequiredMixin, CreateView):
+    model = Persona
+    success_url = reverse_lazy("persona_list")
+    fields = ["nombre_completo", "edad", "email"]
+
+
+class PersonaDelete(LoginRequiredMixin, DeleteView):
+    model = Persona
+    success_url = reverse_lazy("persona_list")
+
+
+class PersonaUpdate(LoginRequiredMixin, UpdateView):
+    model = Persona
+    success_url = reverse_lazy("persona_list")
+    fields = ["nombre_completo", "edad", "email"]
