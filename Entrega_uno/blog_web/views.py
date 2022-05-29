@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
-from blog_web.models import*
+from blog_web.models import *
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 def detalleposteo(request, id):
     # persona = Persona.objects.get(pk=id)
@@ -13,8 +14,9 @@ def detalleposteo(request, id):
 
 def inicio(request):
     no_blog = Posteo.objects.count()
-    blog_web = Posteo.objects.all()
-    return render(request, 'inicio.html', {'no_blog': no_blog, 'blog': blog_web})
+    blogweb = Posteo.objects.all()
+    return render(request, 'blog_web/inicio.html', {'no_blog': no_blog, 'blogweb': blogweb})
+
 
 class Bloglist(ListView):
     model = Posteo
@@ -22,9 +24,9 @@ class Bloglist(ListView):
 
 
 class BlogDetail(DetailView):
-
     model = Posteo
     template_name = "blog_web/blogDetail.html"
+
 
 class BlogCreate(LoginRequiredMixin, CreateView):
     model = Posteo
@@ -33,12 +35,11 @@ class BlogCreate(LoginRequiredMixin, CreateView):
 
 
 class BlogDelete(LoginRequiredMixin, DeleteView):
-
     model = Posteo
     success_url = reverse_lazy("blogList")
 
-class BlogUpdate(LoginRequiredMixin, UpdateView):
 
+class BlogUpdate(LoginRequiredMixin, UpdateView):
     model = Posteo
     success_url = reverse_lazy("blogList")
     fields = ["autor", "titulo", "categoria", "post"]
