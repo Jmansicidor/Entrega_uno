@@ -1,7 +1,14 @@
-<a href="{% url 'blog_list' %}">Volver a Lista</a>
+{% load bootstrap5 %}
+{% bootstrap_css %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Guardar">
-</form>
+<a class="btn btn-primary" href="{% url 'blog_list' %}">Volver a Lista</a>
+
+
+<div class="container text-center">
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
