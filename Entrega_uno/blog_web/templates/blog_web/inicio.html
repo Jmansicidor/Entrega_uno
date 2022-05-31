@@ -20,6 +20,7 @@
 <div class="container">
     <div> Registros: {{no_blog}}</div>
 
+
     <div>
 
 
@@ -44,7 +45,7 @@
                 <td>{{blog_web.post}}</td>
                 <td>{{blog_web.fecha_posteo}}</td>
                 <td><a class="btn btn-primary" href="blog/editar/{{blog_web.id}}" role="button">Editar</a></td>
-                <td><a class="btn btn-primary" href="#" role="button">Crear</a></td>
+                <td><a class="btn btn-primary" href="{% url 'blog_crear'%}">Crear</a></td>
                 <td><a class="btn btn-primary" href="blog/detalle/{{blog_web.id}}">Detalle</a></td>
                 <td><a class="btn btn-danger" href="blog/borrar/{{blog_web.id}}">Eliminar</a></td>
 
