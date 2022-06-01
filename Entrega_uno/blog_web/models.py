@@ -6,10 +6,20 @@ from django.db import models
 
 # Create your models here.
 
+class Usuario(models.Model):
+    pais = models.CharField(max_length=255)
+    domicilio = models.CharField(max_length=255)
+    sexo = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f'Pais {self.pais}: {self.domicilio} {self.sexo}'
+
+
 class Persona(models.Model):
     nombre_completo = models.CharField(max_length=255)
     edad = models.IntegerField()
     email = models.CharField(max_length=255)
+    otros_datos = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True)
 
 
 class Posteo(models.Model):
@@ -21,9 +31,3 @@ class Posteo(models.Model):
 
     def __str__(self):
         return f'Posteo {self.id}: {self.titulo} {self.categoria} {self.post} {self.fecha_posteo}'
-
-
-class Usuario(models.Model):
-    pais = models.CharField(max_length=255)
-    domicilio = models.CharField(max_length=255)
-    sexo = models.CharField(max_length=255)

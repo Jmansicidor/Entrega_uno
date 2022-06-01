@@ -18,6 +18,13 @@ def inicio(request):
     return render(request, 'blog_web/inicio.html', {'no_blog': no_blog, 'blogweb': blogweb})
 
 
+def userunited(request):
+    no_persona = Persona.objects.count()
+    blogwebuserunited = Persona.objects.all()
+    return render(request, 'blog_web/usuarioList.html',
+                  {'no_persona': no_persona, 'blogwebuserunited': blogwebuserunited})
+
+
 class Bloglist(ListView):
     model = Posteo
     template_name = "blog_web/blogList.html"
