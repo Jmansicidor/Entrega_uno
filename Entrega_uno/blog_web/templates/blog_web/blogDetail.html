@@ -1,8 +1,17 @@
-<a href="{% url 'blog_list' %}">Volver a Lista</a>
+{% load bootstrap5 %}
+{% bootstrap_css %}
+
 <div>
-    <h1>{{object.titulo}}</h1>
-    <h2>{{object.autor}}</h2>
-    <p> {{object.categoria}} </p>
-    <h3>{{object.post}}</h3>
-    <h3>{{object.fecha_posteo}}</h3>
+    <div class="container text-center">
+        <h1>{{object.titulo}}</h1>
+    </div>
+    <div class="container text-center">
+        <h3>Autor:{{object.autor}}</h3>
+        <p>{{object.categoria}} </p>
+        <h4>{{object.post}}</h4>
+        <h5>{{object.fecha_posteo}}</h5>
+        <a class="btn btn-primary" href="{% url 'blog_list' %}">Volver a Lista</a>
+
+    </div>
+</div>
 </div>
