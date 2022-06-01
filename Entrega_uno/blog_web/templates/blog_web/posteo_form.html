@@ -1,14 +1,22 @@
 {% load bootstrap5 %}
 {% bootstrap_css %}
 
+
+
 <a class="btn btn-primary" href="{% url 'blog_list' %}">Volver a Lista</a>
 
+<br>
+<br>
 
 <div class="container text-center">
 
+
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% bootstrap_form form layout='inline'%}
+        
+        <br>
+
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </div>

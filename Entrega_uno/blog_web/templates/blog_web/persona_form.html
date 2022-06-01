@@ -1,10 +1,19 @@
-<a href="{% url 'persona_list' %}">Volver a Lista de Personas</a>
-<br>
-<a href="{% url 'blog_list' %}">Volver a Lista Blog</a>
+{% load bootstrap5 %}
+{% bootstrap_css %}
+
+
+
 
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Guardar">
-</form>
 
+    {% bootstrap_form form %}
+
+    {% bootstrap_button "Guardar" button_type="submit" button_class="btn-success" %}
+   
+</form>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<a href="{% url 'persona_list' %}"><button type="button" class="btn btn-secondary">Volver a Lista de Personas</button></a>
+<a href="{% url 'blog_list' %}"><button type="button" class="btn btn-secondary">Volver a Lista Blog</button></a>
+
+</div>
