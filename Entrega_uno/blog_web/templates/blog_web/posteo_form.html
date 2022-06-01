@@ -13,10 +13,16 @@
 
     <form method="post">
         {% csrf_token %}
+
         {% bootstrap_form form layout='inline'%}
+
         
         <br>
 
-        <button type="submit" class="btn btn-primary">Guardar</button>
+
+        {% bootstrap_button "Guardar" button_type="submit" button_class="btn-success" %}
+        
+        
+       
     </form>
 </div>
