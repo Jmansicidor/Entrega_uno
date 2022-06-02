@@ -19,7 +19,7 @@ class Persona(models.Model):
     nombre_completo = models.CharField(max_length=255)
     edad = models.IntegerField()
     email = models.CharField(max_length=255)
-    
+    otros_datos = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True)
 
 
 class Posteo(models.Model):
