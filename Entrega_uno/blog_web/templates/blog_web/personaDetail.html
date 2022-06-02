@@ -1,7 +1,20 @@
-<a href="{% url 'persona_list' %}">Volver a Lista</a>
+{% load bootstrap5 %}
+{% bootstrap_css %}
+
+<div>
+    <div class="container text-center">
+        <h1>{{object.titulo}}</h1>
+    </div>
+    <div class="container text-center">
 <div>
     <h1>{{object.nombre_completo}}</h1>
     <h2>{{object.dni}}</h2>
     <p> {{object.email}} </p>
-    
+    <p> {{object.otros_datos}} </p>
+  <a class="btn btn-primary" href="{% url 'persona_list' %}">Volver</a>
+
+
+
+    </div>
+</div>
 </div>
