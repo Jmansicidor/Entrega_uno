@@ -68,7 +68,7 @@ class PersonaDetail(DetailView):
 class PersonaCreate(LoginRequiredMixin, CreateView):
     model = Persona
     success_url = reverse_lazy("persona_list")
-    fields = ["nombre_completo", "edad", "email"]
+    fields = ["nombre_completo", "edad", "email", "otros_datos"]
 
 
 class PersonaDelete(LoginRequiredMixin, DeleteView):
